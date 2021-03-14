@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>RecyclerAdapterActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+RecyclerAdapterActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>fr.isen.bernoussi.androiderestaurant
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+<span class="s0">class </span>RecyclerAdapterActivity : AppCompatActivity() {
+    override <span class="s0">fun </span>onCreate(savedInstanceState: Bundle?) {
+        <span class="s0">super</span>.onCreate(savedInstanceState)
+        setContentView(R.layout.recycler_adapter)
+    }
+    <span class="s0">class </span>ViewHolder(view: View) : RecyclerViewHolder(view)
+        <span class="s0">val </span>EntréesImage= view.findViewById&lt;ImageView(R.id.image_item)
+}</pre>
+</body>
+</html>

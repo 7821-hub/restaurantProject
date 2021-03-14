@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">AndroidERestaurant</string>
+    <!--Page d'accueil-->
+    <string name="home_page_title">Bienvenue chez UltimeRestaurant</string>
+
+    <!-- page de collection -->
+    <string name="collection_page_title">Mon panier </string>
+    <!-- page d'ajout -->
+    <string name="add_menu_page_title">ajout du menu</string>
+    <string name="add_menu_page_description">@string/item_menu_description</string>
+    <string name="add_page_upload_button">@string/item_menu_name</string>
+    <string name="add_menu_page_name_input">Charger une Image </string>
+
+    <string-array name="add_entrees_page_input">
+        <item>Entrée:salade cesar</item>
+        <item>Entrée:salade niçoise</item>
+        <item>Entrée:salade tomates mozzarella</item>
+    </string-array>
+    <string-array name="add_Plats_page_input">
+        <item>Plat:tagliatelles au saumon</item>
+        <item>Plat:Lasagne </item>
+        <item>Plat:pizza bolognaise</item>
+    </string-array>
+    <string-array name="add_Dessert_page_input">
+        <item>Dessert:Mousse au chocolat</item>
+        <item>Dessert:Glace au choix </item>
+        <item>Dessert:Fondant au chocolat</item>
+    </string-array>
+    <string name="add_name_menu_confirm_button">Confirmer</string>
+    <!-- page choix du menu-->
+    <string name="item_menu_name">Choix du menu </string>
+    <string name="item_menu_description">Choix du menu </string>
+    <string name="btn_entrees">Entrées</string>
+    <string name="btn_plats">PLATS</string>
+    <string name="btn_desserts">DESSERTS</string>
+
+</resources>
