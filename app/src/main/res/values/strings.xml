@@ -7,8 +7,6 @@
     <string name="collection_page_title">Mon panier </string>
     <!-- page d'ajout -->
     <string name="add_menu_page_title">ajout du menu</string>
-    <string name="add_menu_page_description">@string/item_menu_description</string>
-    <string name="add_page_upload_button">@string/item_menu_name</string>
     <string name="add_menu_page_name_input">Charger une Image </string>
 
     <string-array name="add_entrees_page_input">
@@ -28,10 +26,14 @@
     </string-array>
     <string name="add_name_menu_confirm_button">Confirmer</string>
     <!-- page choix du menu-->
-    <string name="item_menu_name">Choix du menu </string>
-    <string name="item_menu_description">Choix du menu </string>
     <string name="btn_entrees">Entrées</string>
     <string name="btn_plats">PLATS</string>
     <string name="btn_desserts">DESSERTS</string>
+    <string name="btn_ble">BLE </string>
+    <!--page BLE-->
+    <string name="ble_scan_play_title">lancer le scan BLE </string>
+    <string name="ble_scan_pause_title">Scan BLE en cours </string>
+    <string name="mytitle">MyTitle</string>
+
 
 </resources>

@@ -1,30 +1,48 @@
 package fr.isen.bernoussi.androiderestaurant
 
+import android.bluetooth.BluetoothDevice
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import fr.isen.bernoussi.androiderestaurant.data.Dishes
-import kotlinx.android.synthetic.main.item_user.view.*
+import fr.isen.bernoussi.androiderestaurant.databinding.CellDishBinding
 
-class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val name = itemView.textView
 
-}
+class RecyclerAdapter(
+    val dishes: List<Dishes>,
+    val onClikcListener: CategoryActivity
+) : RecyclerView.Adapter<RecyclerAdapter.DishViewHodler>() {
 
-class RecyclerAdapter(var dishes: MutableList<Dishes>) : RecyclerView.Adapter<MyHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, position: Int): MyHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
-        return MyHolder(view)
+    private lateinit var _binding: CellDishBinding
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHodler {
+        _binding = CellDishBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return DishViewHodler(_binding.root)
     }
 
-    override fun getItemCount(): Int {
-        return dishes.size
+    override fun getItemCount(): Int = dishes.size
+
+    override fun onBindViewHolder(holder: DishViewHodler, position: Int) {
+        holder.title.text = dishes[position].title
+        if (dishes[position].getFirstPicture() != null)
+            Picasso.get().load(dishes[position].getFirstPicture()).into(holder.image)
+        holder.price.text = dishes[position].prices[0].toString()
+
+        holder.image.setOnClickListener { onClikcListener.onItemClicked(dish = dishes[position]) }
     }
 
-    override fun onBindViewHolder(myHolder: MyHolder, position: Int) {
-        val dish = dishes.get(position)
-        myHolder.name.text = dish.name
+    class DishViewHodler(view: View): RecyclerView.ViewHolder(view) {
+        val image = view.findViewById<ImageView>(R.id.dishImage)
+        val price = view.findViewById<TextView>(R.id.dishPrice)
+        val title = view.findViewById<TextView>(R.id.dishTitle)
+    }
+
+    interface onItemClickedListener{
+        fun onItemClicked(dish: Dishes)
     }
 }
 

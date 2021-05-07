@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.isen.bernoussi.androiderestaurant.databinding.HomeActivityBinding
+import kotlinx.android.synthetic.main.activity_ble_scan.*
+import kotlinx.android.synthetic.main.home_activity.*
+
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: HomeActivityBinding
@@ -21,6 +24,10 @@ class HomeActivity : AppCompatActivity() {
         }
         binding.btnDesserts.setOnClickListener {
             StartCategoryActivity(CategoryActivity.Type.DESSERTS)
+        }
+        binding.BtnBle.setOnClickListener{
+            val intent = Intent(this, BLEScanActivity::class.java)
+            startActivity(intent)
         }
     }
 
